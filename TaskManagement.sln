@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{B904BBFA-3D70-4513-BF70-B8D036BEC65E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{27D81936-7B5E-4AC0-99F8-95432B27380D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManagement.Domain", "Libraries\TaskManagement.Domain\TaskManagement.Domain.csproj", "{BB5F35CE-5C2A-455C-ABEF-EDAFB5D124CC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BB5F35CE-5C2A-455C-ABEF-EDAFB5D124CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB5F35CE-5C2A-455C-ABEF-EDAFB5D124CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB5F35CE-5C2A-455C-ABEF-EDAFB5D124CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB5F35CE-5C2A-455C-ABEF-EDAFB5D124CC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BB5F35CE-5C2A-455C-ABEF-EDAFB5D124CC} = {B904BBFA-3D70-4513-BF70-B8D036BEC65E}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {929799DA-26F3-4894-BD24-2F392EFCC158}
+	EndGlobalSection
+EndGlobal
