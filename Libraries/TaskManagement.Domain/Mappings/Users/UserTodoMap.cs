@@ -14,6 +14,8 @@ namespace TaskManagement.Domain.Mappings.Users
 
             this.HasKey(userTodo => new { userTodo.UserId, userTodo.TodoId });
 
+            this.Ignore(userTodo => userTodo.Id);
+
             this.HasRequired(userTodo => userTodo.User)
                 .WithMany()
                 .HasForeignKey(userTodo => userTodo.UserId);
