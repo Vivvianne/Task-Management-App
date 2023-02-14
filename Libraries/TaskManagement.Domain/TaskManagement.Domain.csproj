@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\TaskManagementContext.cs" />
+    <Compile Include="Mappings\Options\OptionMap.cs" />
     <Compile Include="Mappings\Todos\TodoMap.cs" />
     <Compile Include="Mappings\Todos\TodoTimelineMap.cs" />
     <Compile Include="Mappings\Users\UserMap.cs" />
@@ -70,9 +71,18 @@
     <Compile Include="Migrations\202302141348111_Add_TodoTimeline.designer.cs">
       <DependentUpon>202302141348111_Add_TodoTimeline.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202302141402566_Add_Option.cs" />
+    <Compile Include="Migrations\202302141402566_Add_Option.designer.cs">
+      <DependentUpon>202302141402566_Add_Option.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202302141408078_Add_Status_TodoTimeline.cs" />
+    <Compile Include="Migrations\202302141408078_Add_Status_TodoTimeline.designer.cs">
+      <DependentUpon>202302141408078_Add_Status_TodoTimeline.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Core\BaseEntity.cs" />
     <Compile Include="Models\Core\IGuidedEntity.cs" />
+    <Compile Include="Models\Options\Option.cs" />
     <Compile Include="Models\Todos\Todo.cs" />
     <Compile Include="Models\Todos\TodoTimeline.cs" />
     <Compile Include="Models\Users\User.cs" />
@@ -93,6 +103,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202302141348111_Add_TodoTimeline.resx">
       <DependentUpon>202302141348111_Add_TodoTimeline.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202302141402566_Add_Option.resx">
+      <DependentUpon>202302141402566_Add_Option.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202302141408078_Add_Status_TodoTimeline.resx">
+      <DependentUpon>202302141408078_Add_Status_TodoTimeline.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

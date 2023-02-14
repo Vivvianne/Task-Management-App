@@ -10,6 +10,8 @@ namespace TaskManagement.Domain.Mappings.Todos
     {
         public TodoTimelineMap()
         {
+            this.ToTable(nameof(TodoTimeline));
+
             this.HasKey(todoTimeline => todoTimeline.Id);
 
             this.HasIndex(todoTimeline => todoTimeline.UserTodoGuid);

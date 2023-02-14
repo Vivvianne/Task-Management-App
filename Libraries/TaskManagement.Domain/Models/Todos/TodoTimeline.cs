@@ -13,6 +13,11 @@ namespace TaskManagement.Domain.Models.Todos
         public string Description { get; set; }
 
         /// <summary>
+        /// Gets or sets the status
+        /// </summary>
+        public string Status { get; set; }
+
+        /// <summary>
         /// Gets or sets a user todo entity guid
         /// </summary>
         public Guid UserTodoGuid { get; set; }
