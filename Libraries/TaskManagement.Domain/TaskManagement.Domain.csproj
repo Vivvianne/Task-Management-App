@@ -55,11 +55,26 @@
   <ItemGroup>
     <Compile Include="Data\TaskManagementContext.cs" />
     <Compile Include="Mappings\Todos\TodoMap.cs" />
+    <Compile Include="Mappings\Todos\TodoTimelineMap.cs" />
     <Compile Include="Mappings\Users\UserMap.cs" />
     <Compile Include="Mappings\Users\UserTodoMap.cs" />
+    <Compile Include="Migrations\202302111056533_InitialCreate.cs" />
+    <Compile Include="Migrations\202302111056533_InitialCreate.designer.cs">
+      <DependentUpon>202302111056533_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202302140449122_RemoveDefaultIdParameter_UserTodo.cs" />
+    <Compile Include="Migrations\202302140449122_RemoveDefaultIdParameter_UserTodo.designer.cs">
+      <DependentUpon>202302140449122_RemoveDefaultIdParameter_UserTodo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202302141348111_Add_TodoTimeline.cs" />
+    <Compile Include="Migrations\202302141348111_Add_TodoTimeline.designer.cs">
+      <DependentUpon>202302141348111_Add_TodoTimeline.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Core\BaseEntity.cs" />
     <Compile Include="Models\Core\IGuidedEntity.cs" />
     <Compile Include="Models\Todos\Todo.cs" />
+    <Compile Include="Models\Todos\TodoTimeline.cs" />
     <Compile Include="Models\Users\User.cs" />
     <Compile Include="Models\Users\UserTodo.cs" />
     <Compile Include="Program.cs" />
@@ -69,7 +84,17 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202302111056533_InitialCreate.resx">
+      <DependentUpon>202302111056533_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202302140449122_RemoveDefaultIdParameter_UserTodo.resx">
+      <DependentUpon>202302140449122_RemoveDefaultIdParameter_UserTodo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202302141348111_Add_TodoTimeline.resx">
+      <DependentUpon>202302141348111_Add_TodoTimeline.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
