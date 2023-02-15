@@ -1,12 +1,11 @@
-﻿using System.Data.Entity.ModelConfiguration;
-using TaskManagement.Domain.Models.Users;
+﻿using TaskManagement.Domain.Models.Users;
 
 namespace TaskManagement.Domain.Mappings.Users
 {
     /// <summary>
     /// Represents a user map
     /// </summary>
-    public class UserMap : EntityTypeConfiguration<User>
+    public class UserMap : TaskManagementEntityTypeConfiguration<User>
     {
         public UserMap()
         {

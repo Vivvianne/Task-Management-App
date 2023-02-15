@@ -1,12 +1,11 @@
-﻿using System.Data.Entity.ModelConfiguration;
-using TaskManagement.Domain.Models.Options;
+﻿using TaskManagement.Domain.Models.Options;
 
 namespace TaskManagement.Domain.Mappings.Options
 {
     /// <summary>
     /// Represents the option mapping
     /// </summary>
-    public class OptionMap : EntityTypeConfiguration<Option>
+    public class OptionMap : TaskManagementEntityTypeConfiguration<Option>
     {
         public OptionMap()
         {

@@ -1,12 +1,11 @@
-﻿using System.Data.Entity.ModelConfiguration;
-using TaskManagement.Domain.Models.Todos;
+﻿using TaskManagement.Domain.Models.Todos;
 
 namespace TaskManagement.Domain.Mappings.Todos
 {
     /// <summary>
     /// Represents a todo mapping
     /// </summary>
-    public class TodoMap : EntityTypeConfiguration<Todo>
+    public class TodoMap : TaskManagementEntityTypeConfiguration<Todo>
     {
         public TodoMap()
         {

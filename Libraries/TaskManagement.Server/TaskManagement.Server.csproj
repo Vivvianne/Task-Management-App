@@ -5,18 +5,19 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{18FF9D47-1E1D-4DDA-B770-3410F92AD549}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TaskManagement.Domain</RootNamespace>
-    <AssemblyName>TaskManagement.Domain</AssemblyName>
+    <ProjectGuid>{BB5F35CE-5C2A-455C-ABEF-EDAFB5D124CC}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>TaskManagement.Server</RootNamespace>
+    <AssemblyName>TaskManagement.Server</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -26,6 +27,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -43,6 +45,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Remoting" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -51,28 +54,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\Infrastructure\EfRepository.cs" />
-    <Compile Include="Data\Infrastructure\IRepository.cs" />
-    <Compile Include="Data\ITaskManagementDataProvider.cs" />
-    <Compile Include="Mappings\Options\OptionMap.cs" />
-    <Compile Include="Mappings\TaskManagementEntityTypeConfiguration.cs" />
-    <Compile Include="Mappings\Todos\TodoMap.cs" />
-    <Compile Include="Mappings\Todos\TodoTimelineMap.cs" />
-    <Compile Include="Mappings\Users\UserMap.cs" />
-    <Compile Include="Mappings\Users\UserTodoMap.cs" />
-    <Compile Include="Models\Core\BaseEntity.cs" />
-    <Compile Include="Models\Core\IGuidedEntity.cs" />
-    <Compile Include="Models\Options\Option.cs" />
-    <Compile Include="Models\Todos\Todo.cs" />
-    <Compile Include="Models\Todos\TodoTimeline.cs" />
-    <Compile Include="Models\Users\User.cs" />
-    <Compile Include="Models\Users\UserTodo.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\RemoteAdd.cs" />
+    <Compile Include="TaskManagementDataProvider.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TaskManagement.Domain\TaskManagement.Domain.csproj">
+      <Project>{18FF9D47-1E1D-4DDA-B770-3410F92AD549}</Project>
+      <Name>TaskManagement.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -94,5 +94,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Libraries\TaskManagement.Domain\TaskManagement.Domain.csproj">
+      <Project>{18ff9d47-1e1d-4dda-b770-3410f92ad549}</Project>
+      <Name>TaskManagement.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

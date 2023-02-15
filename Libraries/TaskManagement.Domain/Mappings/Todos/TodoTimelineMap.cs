@@ -1,12 +1,11 @@
-﻿using System.Data.Entity.ModelConfiguration;
-using TaskManagement.Domain.Models.Todos;
+﻿using TaskManagement.Domain.Models.Todos;
 
 namespace TaskManagement.Domain.Mappings.Todos
 {
     /// <summary>
     /// Represents a todo timeline mapping 
     /// </summary>
-    public class TodoTimelineMap : EntityTypeConfiguration<TodoTimeline>
+    public class TodoTimelineMap : TaskManagementEntityTypeConfiguration<TodoTimeline>
     {
         public TodoTimelineMap()
         {

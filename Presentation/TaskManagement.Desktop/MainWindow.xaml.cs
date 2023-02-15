@@ -1,28 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
+using TaskManagement.Domain.Services;
 
 namespace TaskManagement.Desktop
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : NavigationWindow
     {
         public MainWindow()
         {
             InitializeComponent();
+
+            RemoteAdd remoteAdd = (RemoteAdd)Activator.GetObject(typeof(RemoteAdd),
+               "tcp://localhost:8085/RemoteAdd");
+
+            Console.WriteLine(remoteAdd.Add(1, 2));
         }
     }
 }
