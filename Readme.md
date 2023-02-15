@@ -13,7 +13,7 @@ https://www.entityframeworktutorial.net/code-first/configure-one-to-many-relatio
 https://www.entityframeworktutorial.net/code-first/move-configurations-to-seperate-class-in-code-first.aspx
 
 ### Migrations
-https://learn.microsoft.com/en-us/ef/ef6/modeling/code-first/migrations/
+https://learn.microsoft.com/en-us/ef/ef6/modeling/code-first/migrations
 https://learn.microsoft.com/en-us/ef/ef6/fundamentals/configuring/code-based
 
 ### Inversion of Control
