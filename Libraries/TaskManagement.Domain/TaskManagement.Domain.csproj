@@ -68,12 +68,24 @@
     <Compile Include="Models\Users\User.cs" />
     <Compile Include="Models\Users\UserTodo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Options\IOptionService.cs" />
+    <Compile Include="Services\Options\OptionService.cs" />
     <Compile Include="Services\RemoteAdd.cs" />
+    <Compile Include="Services\Todos\ITodoService.cs" />
+    <Compile Include="Services\Todos\ITodoTimelineService.cs" />
+    <Compile Include="Services\Todos\TodoService.cs" />
+    <Compile Include="Services\Todos\TodoTimelineService.cs" />
+    <Compile Include="Services\Users\IUserService.cs" />
+    <Compile Include="Services\Users\IUserTodoService.cs" />
+    <Compile Include="Services\Users\UserService.cs" />
+    <Compile Include="Services\Users\UserTodoService.cs" />
+    <Compile Include="TaskManagementDataProvider.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

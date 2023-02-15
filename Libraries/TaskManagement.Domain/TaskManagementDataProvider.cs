@@ -7,7 +7,7 @@ using TaskManagement.Domain.Data;
 using TaskManagement.Domain.Mappings;
 using TaskManagement.Domain.Models;
 
-namespace TaskManagement.Server
+namespace TaskManagement.Domain
 {
     /// <summary>
     /// Represents a task management context
@@ -15,10 +15,6 @@ namespace TaskManagement.Server
     public class TaskManagementDataProvider : DbContext, ITaskManagementDataProvider
     {
         #region Constructors
-
-        public TaskManagementDataProvider() 
-        {
-        }
 
         public TaskManagementDataProvider(string connectionString) : base(connectionString) 
         {
