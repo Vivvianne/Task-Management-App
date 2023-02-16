@@ -9,7 +9,6 @@ namespace TaskManagement.Domain.Models.Users
     /// </summary>
     public class User : BaseEntity, IGuidedEntity
     {
-        private ICollection<UserTodo> _usersTodos;
 
         public User() 
         {
@@ -25,14 +24,5 @@ namespace TaskManagement.Domain.Models.Users
         /// Gets or sets the name
         /// </summary>
         public string Name { get; set; }
-
-        /// <summary>
-        /// Gets or sets the user todos
-        /// </summary>
-        public virtual ICollection<UserTodo> UserTodos
-        {
-            get { return _usersTodos ?? (_usersTodos = new List<UserTodo>()); }
-            protected set { _usersTodos = value; }
-        }
     }
 }

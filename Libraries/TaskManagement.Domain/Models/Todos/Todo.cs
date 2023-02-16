@@ -10,7 +10,6 @@ namespace TaskManagement.Domain.Models.Todos
     /// </summary>
     public class Todo : BaseEntity, IGuidedEntity
     {
-        private ICollection<UserTodo> _todoUsers;
 
         public Todo() 
         {
@@ -32,13 +31,5 @@ namespace TaskManagement.Domain.Models.Todos
         /// </summary>
         public int ParentId { get; set; }
 
-        /// <summary>
-        /// Gets or sets the todo users
-        /// </summary>
-        public virtual ICollection<UserTodo> TodoUsers
-        {
-            get { return _todoUsers ?? (_todoUsers = new List<UserTodo>()); }
-            protected set { _todoUsers = value; }
-        }
     }
 }
