@@ -1,9 +1,59 @@
-﻿<NavigationWindow x:Class="TaskManagement.Desktop.MainWindow"
+﻿<Window x:Class="TaskManagement.Desktop.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TaskManagement.Desktop"
+        xmlns:viewModel="clr-namespace:TaskManagement.Desktop.Domain.ViewModel"
         mc:Ignorable="d"
-        Title="Task Management Application" Height="450" Width="800">
-</NavigationWindow>
+        Title="Task Management Application"
+        Height="600" Width="920"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="Transparent"
+        AllowsTransparency="True">
+    
+    <Window.DataContext>
+        <viewModel:MainViewModel/>
+    </Window.DataContext>
+
+    <Border Background="#272537"
+            CornerRadius="10">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="75" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <TextBlock Text="Task Management" 
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Left"
+                   Foreground="White"
+                   FontSize="22"
+                   Margin="10,0,0,0"/>
+            <StackPanel Grid.Row="1">
+                <RadioButton Content="Home"
+                             Height="50"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource MenuButtonTheme}"
+                             IsChecked="True"
+                             Command="{Binding HomeViewCommand}"/>
+                
+                <RadioButton Content="Tasks"
+                             Height="50"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource MenuButtonTheme}"
+                             Command="{Binding TaskViewCommand}"/>
+            </StackPanel>
+            <ContentControl Grid.Row="1"
+                                Grid.Column="1"
+                                Margin="10" 
+                                Content="{Binding CurrentView}"/>
+        </Grid>
+    </Border>
+</Window>
