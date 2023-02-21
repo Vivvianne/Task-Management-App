@@ -25,3 +25,5 @@ https://autofac.readthedocs.io/en/latest/getting-started/index.html
 
 ### Frontend
 https://learn.microsoft.com/en-us/dotnet/desktop/wpf/getting-started/?view=netframeworkdesktop-4.8
+#### Morder UI
+https://www.youtube.com/watch?v=PzP8mw7JUzI&t=166s
