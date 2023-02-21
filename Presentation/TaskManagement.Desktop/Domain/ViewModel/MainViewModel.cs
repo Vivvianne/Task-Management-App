@@ -11,8 +11,10 @@ namespace TaskManagement.Desktop.Domain.ViewModel
         public MainViewModel() 
         {
             HomeViewModel = new HomeViewModel();
-            TaskViewModel= new TaskViewModel();
-
+            TaskViewModel = new TaskViewModel();
+            UserViewModel = new UserViewModel();
+            OptionViewModel = new OptionViewModel();
+            
             CurrentView = this.HomeViewModel;
 
             HomeViewCommand = new RelayCommand(o =>
@@ -23,6 +25,16 @@ namespace TaskManagement.Desktop.Domain.ViewModel
             TaskViewCommand = new RelayCommand(o =>
             {
                 CurrentView = TaskViewModel;
+            });
+
+            UserViewCommand = new RelayCommand(o =>
+            {
+                CurrentView = UserViewModel;
+            });
+
+            OptionViewCommand = new RelayCommand(o =>
+            {
+                CurrentView = OptionViewModel;
             });
         }
 
@@ -38,7 +50,12 @@ namespace TaskManagement.Desktop.Domain.ViewModel
 
         public HomeViewModel HomeViewModel { get; set; }
         public TaskViewModel TaskViewModel { get; set; }
+        public UserViewModel UserViewModel { get; set; }
+        public OptionViewModel OptionViewModel { get; set; }
+
         public RelayCommand HomeViewCommand { get; set; }
         public RelayCommand TaskViewCommand { get; set; }
+        public RelayCommand UserViewCommand { get; set; }
+        public RelayCommand OptionViewCommand { get; set; }
     }
 }

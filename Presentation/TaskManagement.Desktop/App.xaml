@@ -19,6 +19,14 @@
                 <view:TaskView/>
             </DataTemplate>
 
+            <DataTemplate DataType="{x:Type viewModel:UserViewModel}">
+                <view:UsersView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:OptionViewModel}">
+                <view:OptionsView/>
+            </DataTemplate>
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>

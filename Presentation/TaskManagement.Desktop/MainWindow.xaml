@@ -6,12 +6,11 @@
         xmlns:local="clr-namespace:TaskManagement.Desktop"
         xmlns:viewModel="clr-namespace:TaskManagement.Desktop.Domain.ViewModel"
         mc:Ignorable="d"
-        Title="Task Management Application"
         Height="600" Width="920"
-        WindowStyle="None"
+        WindowStyle="SingleBorderWindow"
         ResizeMode="NoResize"
-        Background="Transparent"
-        AllowsTransparency="True">
+        Background="Transparent">
+    <!--AllowsTransparency="True"-->
     
     <Window.DataContext>
         <viewModel:MainViewModel/>
@@ -49,6 +48,18 @@
                              FontSize="14"
                              Style="{StaticResource MenuButtonTheme}"
                              Command="{Binding TaskViewCommand}"/>
+                <RadioButton Content="Users"
+                             Height="50"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource MenuButtonTheme}"
+                             Command="{Binding UserViewCommand}"/>
+                <RadioButton Content="Options"
+                             Height="50"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource MenuButtonTheme}"
+                             Command="{Binding OptionViewCommand}"/>
             </StackPanel>
             <ContentControl Grid.Row="1"
                                 Grid.Column="1"
