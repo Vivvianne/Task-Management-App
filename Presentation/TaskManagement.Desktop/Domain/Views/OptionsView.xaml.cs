@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TaskManagement.Desktop.Domain.Windows;
 
 namespace TaskManagement.Desktop.Domain.Views
 {
@@ -23,6 +24,12 @@ namespace TaskManagement.Desktop.Domain.Views
         public OptionsView()
         {
             InitializeComponent();
+        }
+
+        private void Add_Option_Button_Click(object sender, RoutedEventArgs e)
+        {
+            OptionsFormView optionsFormView = new OptionsFormView();
+            optionsFormView.ShowDialog();
         }
     }
 }

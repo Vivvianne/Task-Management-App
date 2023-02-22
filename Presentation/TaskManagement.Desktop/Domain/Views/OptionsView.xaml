@@ -6,9 +6,24 @@
              xmlns:local="clr-namespace:TaskManagement.Desktop.Domain.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <TextBlock Text="Options"
-                      Foreground="White"
-                      FontSize="28"
-                      HorizontalAlignment="Left"
-                      Margin="0,0,0,20" />
+    <StackPanel>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Options"
+                       Foreground="White"
+                       FontSize="28"
+                       VerticalAlignment="Top"
+                       HorizontalAlignment="Left"
+                       Margin="0,6,0,0" />
+            <StackPanel Grid.Column="2"
+                        Orientation="Horizontal">
+                <Button Content="Add Option"
+                        Style="{StaticResource ButtonTheme}"
+                        Click="Add_Option_Button_Click"/>
+            </StackPanel>
+        </Grid>
+    </StackPanel>
 </UserControl>

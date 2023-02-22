@@ -6,6 +6,7 @@ namespace TaskManagement.Domain.Models.Options
     /// <summary>
     /// Represents an option
     /// </summary>
+    [Serializable]
     public class Option : BaseEntity, IGuidedEntity
     {
         public Option() 

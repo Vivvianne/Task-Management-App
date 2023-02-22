@@ -21,7 +21,8 @@ https://martinfowler.com/articles/injection.html
 
 ### Dependency Injection
 https://autofac.readthedocs.io/en/latest/getting-started/index.html
-
+#### Dependency resolution
+https://autofac.readthedocs.io/en/latest/resolve/index.html
 
 ### Frontend
 https://learn.microsoft.com/en-us/dotnet/desktop/wpf/getting-started/?view=netframeworkdesktop-4.8
