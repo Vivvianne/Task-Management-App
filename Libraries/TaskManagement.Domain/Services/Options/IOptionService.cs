@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using TaskManagement.Domain.Models.Options;
 
 namespace TaskManagement.Domain.Services.Options
@@ -30,5 +31,12 @@ namespace TaskManagement.Domain.Services.Options
         /// <param name="id">Identity</param>
         /// <returns>Option</returns>
         Option GetOptionById(int id);
+
+        /// <summary>
+        /// Gets an option by entity guid
+        /// </summary>
+        /// <param name="entityGuid">Entity guid</param>
+        /// <returns>Option</returns>
+        Option GetOptionByEntityGuid(Guid entityGuid);
     }
 }

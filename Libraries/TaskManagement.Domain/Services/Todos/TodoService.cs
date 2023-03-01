@@ -53,5 +53,10 @@ namespace TaskManagement.Domain.Services.Todos
 
             todoRepository.Update(todo);
         }
+
+        public List<Todo> GetTodos()
+        {
+            return todoRepository.Table.ToList();
+        }
     }
 }

@@ -32,5 +32,6 @@ namespace TaskManagement.Domain.Services.Todos
         /// </summary>
         /// <returns>Todos</returns>
         List<Todo> GetAllTodos();
+        List<Todo> GetTodos();
     }
 }

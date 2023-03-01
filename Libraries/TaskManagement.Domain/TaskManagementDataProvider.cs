@@ -38,7 +38,7 @@ namespace TaskManagement.Domain
         /// Saves changes asyncronously
         /// </summary>
         /// <returns>Intager</returns>
-        public Task<int> SaveChangesAsync()
+        public override Task<int> SaveChangesAsync()
         {
             return base.SaveChangesAsync();
         }

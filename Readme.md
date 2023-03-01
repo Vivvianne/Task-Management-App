@@ -15,6 +15,7 @@ https://www.entityframeworktutorial.net/code-first/move-configurations-to-sepera
 ### Migrations
 https://learn.microsoft.com/en-us/ef/ef6/modeling/code-first/migrations
 https://learn.microsoft.com/en-us/ef/ef6/fundamentals/configuring/code-based
+https://romiller.com/2012/02/09/running-scripting-migrations-from-code
 
 ### Inversion of Control
 https://martinfowler.com/articles/injection.html
@@ -28,3 +29,6 @@ https://autofac.readthedocs.io/en/latest/resolve/index.html
 https://learn.microsoft.com/en-us/dotnet/desktop/wpf/getting-started/?view=netframeworkdesktop-4.8
 #### Morder UI
 https://www.youtube.com/watch?v=PzP8mw7JUzI&t=166s
+
+#### Combo box
+https://stackoverflow.com/questions/3775514/wpf-combobox-value-and-display-text

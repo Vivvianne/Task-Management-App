@@ -3,6 +3,8 @@ using System.Runtime.Remoting.Channels.Tcp;
 using System.Runtime.Remoting.Channels;
 using System.Runtime.Remoting;
 using TaskManagement.Domain.Factories;
+using System.Data.Entity;
+using TaskManagement.Domain;
 
 namespace TaskManagement.Server
 {

@@ -8,6 +8,9 @@ using TaskManagement.Domain.Data;
 using TaskManagement.Domain.Services.Options;
 using TaskManagement.Domain.Services.Todos;
 using TaskManagement.Domain.Services.Users;
+using System.Data.Entity.Migrations;
+using TaskManagement.Domain.Migrations;
+using System.Data.Entity.Infrastructure;
 
 namespace TaskManagement.Domain.Extensions
 {
@@ -34,6 +37,10 @@ namespace TaskManagement.Domain.Extensions
             containerBuilder
                 .Register<ITaskManagementDataProvider>(c => new TaskManagementDataProvider("Data Source=localhost;Initial Catalog=TaskManagement;Integrated Security=True"))
                 .InstancePerLifetimeScope();
+
+            var configuration = new Configuration();
+            var migrator = new DbMigrator(configuration);
+            migrator.Update();
 
             containerBuilder.RegisterGeneric(typeof(EfRepository<>))
                 .As(typeof(IRepository<>))

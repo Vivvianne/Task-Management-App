@@ -25,8 +25,8 @@ namespace TaskManagement.Domain.Models.Options
         public string Label { get; set; }
 
         /// <summary>
-        /// Gets or sets the parent option identifier
+        /// Gets or sets the parent option id
         /// </summary>
-        public string ParentOptionId { get; set; }
+        public int ParentOptionId { get; set; } 
     }
 }

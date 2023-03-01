@@ -19,6 +19,18 @@ namespace TaskManagement.Domain.Services.Options
         }
 
         /// <summary>
+        /// Gets the option by entity guid
+        /// </summary>
+        /// <param name="entityGuid">Entity guid</param>
+        /// <returns>Option</returns>
+        public Option GetOptionByEntityGuid(Guid entityGuid)
+        {
+            return (from optionTable in optionRepository.Table
+                    where optionTable.EntityGuid == entityGuid
+                    select optionTable).FirstOrDefault();
+        }
+
+        /// <summary>
         /// Gets an option by identifier
         /// </summary>
         /// <param name="id">idnetifier</param>

@@ -1,4 +1,6 @@
-﻿using TaskManagement.Domain.Models.Users;
+﻿using System;
+using System.Collections.Generic;
+using TaskManagement.Domain.Models.Users;
 
 namespace TaskManagement.Domain.Services.Users
 {
@@ -7,6 +9,8 @@ namespace TaskManagement.Domain.Services.Users
     /// </summary>
     public interface IUserService
     {
+        List<User> GetUsers();
+        User GetUsersByEntityGuid(Guid userGuid);
         void InsertUser(User user);
 
         void UpdateUser(User user);

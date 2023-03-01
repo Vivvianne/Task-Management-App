@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using TaskManagement.Domain.Data.Infrastructure;
 using TaskManagement.Domain.Models.Users;
 
@@ -14,6 +16,18 @@ namespace TaskManagement.Domain.Services.Users
         public UserService(IRepository<User> userRepository)
         {
             this.userRepository = userRepository;
+        }
+
+        public List<User> GetUsers()
+        {
+            return userRepository.Table.ToList();
+        }
+
+        public User GetUsersByEntityGuid(Guid userGuid)
+        {
+            return (from userTable in userRepository.Table
+                    where userTable.EntityGuid == userGuid
+                    select userTable).FirstOrDefault();
         }
 
         public void InsertUser(User user)

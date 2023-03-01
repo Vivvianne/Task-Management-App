@@ -11,38 +11,37 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using TaskManagement.Desktop.Domain.ViewModel;
 using TaskManagement.Domain.Factories;
 using TaskManagement.Domain.ViewModels.Options;
+using TaskManagement.Domain.ViewModels.Tasks;
+using TaskManagement.Domain.ViewModels.Users;
 
 namespace TaskManagement.Desktop.Domain.Windows
 {
     /// <summary>
-    /// Interaction logic for OptionsFormView.xaml
+    /// Interaction logic for AddTaskView.xaml
     /// </summary>
-    public partial class OptionsFormView : Window
+    public partial class AddTaskView : Window
     {
-        public OptionsFormView()
+        public AddTaskView()
         {
             InitializeComponent();
-            LoadParentOptions();
+            LoadUsers();
             this.Owner = App.Current.MainWindow;
         }
 
-        private string ParentOptionGuid { get; set; }
-
-        private void LoadParentOptions()
+        private void LoadUsers()
         {
             KeyValuePair<string, Guid> stringArray = new KeyValuePair<string, Guid>();
 
             TaskManagementFactory taskManagementFactory = (TaskManagementFactory)Activator.GetObject(typeof(TaskManagementFactory),
                "tcp://localhost:8085/TaskManagementFactory");
 
-            List<OptionEntityViewModel> options = taskManagementFactory.ListOptions();
+            List<UserEntityViewModel> users = taskManagementFactory.GetUsers();
 
-            foreach(OptionEntityViewModel option in options)
+            foreach (UserEntityViewModel user in users)
             {
-                this.ComboBox_ParentOption.Items.Add(new KeyValuePair<string, Guid>(option.Label, option.EntityGuid));
+                this.ComboBox_Users.Items.Add(new KeyValuePair<string, Guid>(user.Name, user.EntityGuid));
             }
         }
 
@@ -51,20 +50,17 @@ namespace TaskManagement.Desktop.Domain.Windows
             TaskManagementFactory taskManagementFactory = (TaskManagementFactory)Activator.GetObject(typeof(TaskManagementFactory),
                "tcp://localhost:8085/TaskManagementFactory");
 
-            Console.WriteLine(string.IsNullOrEmpty(this.ParentOptionGuid));
-
-            List<OptionEntityViewModel> options = taskManagementFactory.AddOption(new OptionEntityViewModel
+            List<TaskEntityViewModel> task = taskManagementFactory.AddTask(new TaskEntityViewModel
             {
-                Label = this.TextBox_OptionLabel.Text,
-                ParentEntityGuid = string.IsNullOrEmpty(this.ParentOptionGuid) ? Guid.Empty : Guid.Parse(this.ParentOptionGuid),
+                Name = this.TextBox_Description.Text,
+                UserGuid = this.ComboBox_Users.SelectedValue is null ? Guid.Empty : Guid.Parse(this.ComboBox_Users.SelectedValue.ToString()),
             });
 
             this.Close();
         }
 
-        private void ParentOption_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void User_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            this.ParentOptionGuid = this.ComboBox_ParentOption.SelectedValue.ToString();
         }
     }
 }
